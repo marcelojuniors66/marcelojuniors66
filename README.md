@@ -5,8 +5,8 @@ Colaborador nos projetos: Arduino Ceará https://arduinoceara.negocio.site/ e Py
  
 <div align="center">
   <a href="https://github.com/marcelojuniors66">
-  <img height="170em" src="https://github-readme-stats.vercel.app/api?username=marcelojuniors66&show_icons=true&theme=chartreuse-dark&include_all_commits=true&count_private=true"/>
-  <img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=marcelojuniors66&layout=compact&langs_count=7&theme=chartreuse-dark"/>
+  <img height="160em" src="https://github-readme-stats.vercel.app/api?username=marcelojuniors66&show_icons=true&theme=chartreuse-dark&include_all_commits=true&count_private=true"/>
+  <img height="160em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=marcelojuniors66&layout=compact&langs_count=7&theme=chartreuse-dark"/>
 </div>
   <div align="center">
     </div>
