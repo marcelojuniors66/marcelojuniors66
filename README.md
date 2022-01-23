@@ -12,7 +12,6 @@ Eu sou a Marcelo Junior, Colaborador nos projetos: Arduino Ceará https://arduin
   <img align="center" alt="Marcelo-Java" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/java/java-original.svg">
   <img align="center" alt="Marcelo-Wordpress" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/wordpress/wordpress-original.svg">
   <img align="center" alt="Marcelo-Arduino" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/arduino/arduino-original.svg">
-  <img align="center" alt="Marcelo-Coreldraw" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/Coreldraw/Coreldraw-original.svg">
   <img align="left" alt="Marcelo-pic" height="150" style="border-radius:50px;" 
 src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width=676&height=676">
 </div>
