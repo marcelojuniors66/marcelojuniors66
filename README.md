@@ -21,6 +21,10 @@ Habilidades, noções e hobbies.
   <img align="center" alt="Marcelo-Arduino" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/arduino/arduino-original.svg">
   <img align="right" alt="Marcelo-pic" height="150" style="border-radius:50px;" 
 src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width=676&height=676">
+ #
+ </div>
+  <a href="https://marcelojuniors66.github.io/curriculo/"><button>Meu Currículo</button></a>
+    </div>
 </div>
   
   ##
@@ -28,6 +32,7 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 <div> 
    <a href="https://instagram.com/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
  	<a href="https://www.linkedin.com/in/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+ 
 
   ![Snake animation](https://github.com/marcelojuniors66/marcelojuniors66/blob/output/github-contribution-grid-snake.svg)
  
