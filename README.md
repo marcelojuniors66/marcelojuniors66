@@ -1,4 +1,4 @@
-## Oi, sejam muito bem vindos! Eu sou a Marcelo Junior, Analista de Sistemas, cursando MBA em Gestão e Gerenciamento de Projetos, ambos pelo Centro Universitário UniAteneu
+## Oi, sejam muito bem vindos! Eu sou o Marcelo Junior, Analista de Sistemas, cursando MBA em Gestão e Gerenciamento de Projetos, ambos pelo Centro Universitário UniAteneu
 ## Trabalho como Analista de Testes e Web Designer na Linklaser Techno Quality.
 Colaborador nos projetos: Arduino Ceará https://arduinoceara.negocio.site/ e Python0800 https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s! 
  
