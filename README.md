@@ -1,4 +1,3 @@
-
 ## Oi, sejam muito bem vindos! Eu sou a Marcelo Junior, Analista de Sistemas, cursando MBA em Gestão e Gerenciamento de Projetos, ambos pelo Centro Universitário UniAteneu
 ## Trabalho como Analista de Testes e Web Designer na Linklaser Techno Quality.
 Colaborador nos projetos: Arduino Ceará https://arduinoceara.negocio.site/ e Python0800 https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s! 
@@ -21,12 +20,7 @@ Habilidades, noções e hobbies.
   <img align="center" alt="Marcelo-Arduino" height="30" width="40" src="https://raw.githubusercontent.com/devicons/devicon/master/icons/arduino/arduino-original.svg">
   <img align="right" alt="Marcelo-pic" height="150" style="border-radius:50px;" 
 src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width=676&height=676">
- #
- </div>
-  <a href="https://marcelojuniors66.github.io/curriculo/"><button>Meu Currículo</button></a>
-    </div>
-</div>
-  
+ 
   ##
  Minhas Redes!
 <div> 
@@ -36,4 +30,7 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 
   ![Snake animation](https://github.com/marcelojuniors66/marcelojuniors66/blob/output/github-contribution-grid-snake.svg)
  
+</div>
+</div>
+  <a href="https://marcelojuniors66.github.io/curriculo/"><button>Click para acessar meu currículo em HTML</button></a>
 </div>
