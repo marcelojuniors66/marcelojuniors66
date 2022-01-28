@@ -28,6 +28,15 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
    <a href="https://instagram.com/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
  	<a href="https://www.linkedin.com/in/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
  
+ #### Projetos de Estudo: 
+| Nome  |  Desenvolvimento  | Descrição |
+| ------------------- | ------------------- | ------------------- | 
+|  [Cursos em TI](https://www.instagram.com/cursosti_uniateneu/) |  ADS, Redes e Gestão | Colaborador e Aluno de Gestão em TI. | 
+|  [Projeto de Irrigação](https://www.profsandromesquita.com/aulas-pixels/curso-de-automacao-agricola) |  Arduino | Projeto de irrigação automatica por por sensor de umidade, que será apresentado em maio de 2022, na conclusão do MBA em Gestão e Gerenciamento de Projetos. | 
+|  [-](https://github.com/marcelojuniors66) |  - | -. | 
+|  [-](https://https://github.com/marcelojuniors66) |  - | -. | 
+|  [-](https://https://github.com/marcelojuniors66) |  - | - |
+ 
 
   ![Snake animation](https://github.com/marcelojuniors66/marcelojuniors66/blob/output/github-contribution-grid-snake.svg)
  
