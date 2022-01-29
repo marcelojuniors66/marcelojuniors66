@@ -21,14 +21,21 @@ Habilidades, noções e hobbies.
   <img align="center" alt="Marcelo-Jira" height="50" width="60" src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/jira/jira-original-wordmark.svg">
   <img align="right" alt="Marcelo-pic" height="150" style="border-radius:50px;" 
 src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width=676&height=676">
+ <img align="left" alt="Marcelo-pic" height="150" style="border-radius:50px;" 
+src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width=676&height=676">
+  
  
+ ## <p align="center">A única coisa que ninguém pode tirar de você é o seu conhecimento.</p>
   ##
  Minhas Redes!
 <div> 
    <a href="https://instagram.com/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
  	<a href="https://www.linkedin.com/in/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
  
- #### Projetos de Estudo: 
+ ### <p align="center">Conhecimento é o segredo de um futuro brilhante, lembre-se disso quando pensar em desistir.</p> 
+ ### <p align="center"></p>
+ 
+ # <p align="center">Projetos de Estudo: </p>
 | Nome  |  Desenvolvimento  | Descrição |
 | ------------------- | ------------------- | ------------------- | 
 |  [Cursos em TI](https://www.instagram.com/cursosti_uniateneu/) |  ADS, Redes e Gestão | Colaborador e Aluno de Gestão em TI. | 
@@ -38,9 +45,11 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 |  [-](https://https://github.com/marcelojuniors66) |  - | - |
  
 
+ 
+
   ![Snake animation](https://github.com/marcelojuniors66/marcelojuniors66/blob/output/github-contribution-grid-snake.svg)
  
 </div>
 </div>
-  <a href="https://marcelojuniors66.github.io/curriculo/"><button>Click para acessar meu currículo em HTML</button></a>
+ <a href="https://marcelojuniors66.github.io/curriculo/"><button><p align="center">Click para acessar meu currículo em HTML</p></button></a>
 </div>
