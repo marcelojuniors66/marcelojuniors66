@@ -1,6 +1,7 @@
 ## Oi, sejam muito bem vindos! Eu sou o Marcelo Junior, Analista de Sistemas, cursando MBA em Gestão e Gerenciamento de Projetos, ambos pelo Centro Universitário UniAteneu
 ## Trabalho como Analista de Testes e Web Designer na Linklaser Techno Quality.
-Colaborador nos projetos: Arduino Ceará https://arduinoceara.negocio.site/ e Python0800 https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s! 
+### Colaborador nos projetos: 
+#### Arduino Ceará https://arduinoceara.negocio.site/ e Python0800 https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s! 
  
 <div align="center">
   <a href="https://github.com/marcelojuniors66">
@@ -40,11 +41,11 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 | ------------------- | ------------------- | ------------------- | 
 |  [Cursos em TI](https://www.instagram.com/cursosti_uniateneu/) |  ADS, Redes e Gestão | Colaborador e Aluno de Gestão em TI. | 
 |  [Projeto de Irrigação](https://www.profsandromesquita.com/aulas-pixels/curso-de-automacao-agricola) |  Arduino | Projeto de irrigação automatica por por sensor de umidade, que será apresentado em maio de 2022, na conclusão do MBA em Gestão e Gerenciamento de Projetos. | 
-|  [-](https://github.com/marcelojuniors66) |  - | -. | 
-|  [-](https://https://github.com/marcelojuniors66) |  - | -. | 
+|  [Arduino Ceará](https://arduinoceara.negocio.site/) |  Arduino | -. | 
+|  [Python0800](https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s!) |  Python | -. | 
 |  [-](https://https://github.com/marcelojuniors66) |  - | - |
  
-
+![4510_Logo](https://user-images.githubusercontent.com/80868364/151638824-08d1723e-08c9-4958-8f91-5cd8efce7fc6.jpg)
  
 
   ![Snake animation](https://github.com/marcelojuniors66/marcelojuniors66/blob/output/github-contribution-grid-snake.svg)
