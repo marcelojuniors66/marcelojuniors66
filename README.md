@@ -55,3 +55,4 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 </div>
  <a href="https://marcelojuniors66.github.io/curriculo/"><button><p align="center">Click para acessar meu currículo em HTML</p></button></a>
 </div>
+
