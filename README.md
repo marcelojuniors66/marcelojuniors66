@@ -61,6 +61,7 @@ src="https://user-images.githubusercontent.com/80868364/151683394-6b4874aa-1319-
  
 </div>
 </div>
- <a href="https://marcelojuniors66.github.io/curriculo/"><button><p align="center">Click para acessar meu currículo em HTML</p></button></a>
+ <a href="https://marcelojuniors66.github.io/curriculo/"><button><p align="center">Click para acessar meu Portfólio 1</p></button></a>
+ <a href="https://marcelojuniors66.github.io/portfolio/"><button><p align="center">Click para acessar meu Portfólio 2</p></button></a>
 </div>
 
