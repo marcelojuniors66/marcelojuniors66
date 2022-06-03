@@ -54,7 +54,7 @@ src="https://user-images.githubusercontent.com/80868364/151638824-08d1723e-08c9-
 
 <img align="center" alt="linklaser-pic" height="250" style="border-radius:50px;" 
 src="https://user-images.githubusercontent.com/80868364/151683394-6b4874aa-1319-4686-9c5f-f2b36859a672.png">
-<a href="https://www.linkedin.com/company/linklaser-techno-quality/mycompany/"><button><p align="center">Atualmente trabalhando na Linklaser echno Quality.</p></button></a>
+<a href="https://www.linkedin.com/company/tecla-t/mycompany/"><button><p align="center">Atualmente trabalhando na Tecla T.</p></button></a>
 
  
   ![Snake animation](https://github.com/marcelojuniors66/marcelojuniors66/blob/output/github-contribution-grid-snake.svg)
