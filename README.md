@@ -50,7 +50,7 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 
 <img align="center" alt="linklaser-pic" height="250" style="border-radius:50px;" 
 src="https://user-images.githubusercontent.com/80868364/151638824-08d1723e-08c9-4958-8f91-5cd8efce7fc6.jpg">
-<a  href="https://www.linkedin.com/school/uniateneu/mycompany/"><button><p align="center">Iniciando Gestão em Tecnologia da Informação na UNIATENEU.</p></button></a>
+<a  href="https://www.linkedin.com/school/uniateneu/mycompany/"><button><p align="center">Cursando Gestão em Tecnologia da Informação na UNIATENEU.</p></button></a>
 
 <img align="center" alt="linklaser-pic" height="250" style="border-radius:50px;" 
 src="https://user-images.githubusercontent.com/80868364/151683394-6b4874aa-1319-4686-9c5f-f2b36859a672.png">
