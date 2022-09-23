@@ -31,8 +31,9 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
   ##
  Minhas Redes!
 <div> 
-   <a href="https://instagram.com/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
- 	<a href="https://www.linkedin.com/in/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+   <a href="https://www.linkedin.com/in/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a> 
+ <a href="https://instagram.com/marcelojuniors66" target="_blank"><img src="https://img.shields.io/badge/-Instagram-%23E4405F?style=for-the-badge&logo=instagram&logoColor=white" target="_blank"></a>
+  	
  
  ### <p align="center">Conhecimento é o segredo de um futuro brilhante, lembre-se disso quando pensar em desistir.</p> 
  ### <p align="center"></p>
@@ -41,7 +42,7 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 | Nome  |  Desenvolvimento  | Descrição |
 | ------------------- | ------------------- | ------------------- | 
 |  [Cursos em TI](https://www.instagram.com/cursosti_uniateneu/) |  ADS, Redes e Gestão | Colaborador e Aluno de Gestão em TI. | 
-|  [Projeto de Irrigação](https://www.profsandromesquita.com/aulas-pixels/curso-de-automacao-agricola) |  Arduino | Projeto de irrigação automatica por sensor de umidade, que será apresentado em maio de 2022, na conclusão do MBA em Gestão e Gerenciamento de Projetos. | 
+|  [Projeto de Irrigação](https://www.profsandromesquita.com/aulas-pixels/curso-de-automacao-agricola) |  Arduino | Projeto de irrigação automatica por sensor de umidade, apresentado em agosto de 2022, como conclusão do MBA em Gestão e Gerenciamento de Projetos. | 
 |  [Arduino Ceará](https://arduinoceara.negocio.site/) |  Arduino | comunidade com mais de 10 anos de atuação em nosso estado, divulgando e promovendo eventos com Arduino. | 
 |  [Python0800](https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s!) |  Python | Curso Grátis de Python com Certificação de 250 h/a no YouTube. | 
 |  [-](https://https://github.com/marcelojuniors66) |  - | - |
@@ -54,7 +55,7 @@ src="https://user-images.githubusercontent.com/80868364/151638824-08d1723e-08c9-
 
 <img align="center" alt="linklaser-pic" height="250" style="border-radius:50px;" 
 src="https://user-images.githubusercontent.com/80868364/151683394-6b4874aa-1319-4686-9c5f-f2b36859a672.png">
-<a href="https://www.linkedin.com/company/tecla-t/mycompany/"><button><p align="center">Atualmente trabalhando na Tecla T.</p></button></a>
+<a href="https://www.linkedin.com/company/tecla-t/mycompany/"><button><p align="center">Atualmente trabalhando na Tecla T / Hapvida.</p></button></a>
 
  
   ![Snake animation](https://github.com/marcelojuniors66/marcelojuniors66/blob/output/github-contribution-grid-snake.svg)
