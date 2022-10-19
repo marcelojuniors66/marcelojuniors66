@@ -45,6 +45,7 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 |  [Projeto de Irrigação](https://www.profsandromesquita.com/aulas-pixels/curso-de-automacao-agricola) |  Arduino | Projeto de irrigação automatica por sensor de umidade, apresentado em agosto de 2022, como conclusão do MBA em Gestão e Gerenciamento de Projetos. | 
 |  [Arduino Ceará](https://arduinoceara.negocio.site/) |  Arduino | comunidade com mais de 10 anos de atuação em nosso estado, divulgando e promovendo eventos com Arduino. | 
 |  [Python0800](https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s!) |  Python | Curso Grátis de Python com Certificação de 250 h/a no YouTube. | 
+|  [Projeto Fusca](https://https://github.com/marcelojuniors66) |  Python | - |
 |  [-](https://https://github.com/marcelojuniors66) |  - | - |
  
  
