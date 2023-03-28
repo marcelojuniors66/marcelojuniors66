@@ -45,7 +45,9 @@ src="https://cdn.pixabay.com/photo/2019/08/10/02/34/am-4396115_960_720.png?width
 |  [Projeto de Irrigação](https://www.profsandromesquita.com/aulas-pixels/curso-de-automacao-agricola) |  Arduino | Projeto de irrigação automatica por sensor de umidade, apresentado em agosto de 2022, como conclusão do MBA em Gestão e Gerenciamento de Projetos. | 
 |  [Arduino Ceará](https://arduinoceara.negocio.site/) |  Arduino | comunidade com mais de 10 anos de atuação em nosso estado, divulgando e promovendo eventos com Arduino. | 
 |  [Python0800](https://www.youtube.com/watch?v=q5K_7kkMUbQ&t=816s!) |  Python | Curso Grátis de Python com Certificação de 250 h/a no YouTube. | 
-|  [Projeto Fusca](https://https://github.com/marcelojuniors66) |  Python | - |
+|  [Projeto Fustech](https://https://github.com/marcelojuniors66) |  Python | Trata-se de um projeto que utiliza um Fusca modificado e equipado com tecnologia avançada para garantir a segurança dos motoristas. O sistema é programado em Python e Arduino e inclui recursos de reconhecimento facial para identificar condutores cadastrados em um banco de dados, além de verificar se eles são menores de idade. O Fusca também possui integração com a assistente virtual Alexa, que ajuda a controlar faróis, piscas e músicas.
+
+O recurso mais impressionante do projeto é a sua capacidade de detectar se o motorista está com sonolência. Se o sistema identificar que o motorista está cansado, o Fusca emitirá um alarme sonoro para alertá-lo. Com essa tecnologia, o Fusca oferece uma maneira inovadora e eficaz de garantir a segurança nas estradas. |
 |  [-](https://https://github.com/marcelojuniors66) |  - | - |
  
  
