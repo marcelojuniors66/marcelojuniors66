@@ -1,0 +1,798 @@
+<!doctype html>
+<html lang='pt-BR'>
+<head>
+    <meta charset='utf-8'>
+    <meta name='viewport' content='width=device-width,initial-scale=1'>
+    <title>Músicas Personalizadas - Marcelo Junior</title>
+    <style>
+        :root {
+            --gold: #d4af37;
+            --gold-hover: #b8952e;
+            --bg-dark: #0a0a0a;
+            --card-bg: #141414;
+            --input-bg: #1f1f1f;
+            --text-color: #ffffff;
+            --text-muted: #b3b3b3;
+            --highlight: #ffcc00;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-color);
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 40%),
+                radial-gradient(circle at 80% 70%, rgba(212, 175, 55, 0.05) 0%, transparent 40%);
+        }
+
+        .audio-wave-bg {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 120px;
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-around;
+            opacity: 0.12;
+            z-index: -1;
+            pointer-events: none;
+            padding: 0 10px;
+            box-sizing: border-box;
+        }
+
+        .audio-wave-bg span {
+            width: 3px;
+            background: linear-gradient(to top, var(--gold), transparent);
+            animation: bounce 1.2s ease-in-out infinite alternate;
+            border-radius: 3px 3px 0 0;
+        }
+
+        .audio-wave-bg span:nth-child(2n) { animation-duration: 0.7s; height: 40px; }
+        .audio-wave-bg span:nth-child(3n) { animation-duration: 0.9s; height: 80px; }
+        .audio-wave-bg span:nth-child(4n) { animation-duration: 1.4s; height: 50px; }
+        .audio-wave-bg span:nth-child(5n) { animation-duration: 1.1s; height: 100px; }
+
+        @keyframes bounce {
+            0% { height: 10px; transform: scaleY(0.3); }
+            100% { height: 110px; transform: scaleY(1); }
+        }
+
+        .container {
+            max-width: 680px;
+            margin: 40px auto;
+            padding: 0 20px;
+            box-sizing: border-box;
+        }
+
+        .box {
+            background: var(--card-bg);
+            padding: 40px 35px;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.7);
+            border: 1px solid rgba(212, 175, 55, 0.1);
+            position: relative;
+            overflow: hidden;
+            backdrop-filter: blur(5px);
+            animation: fadeIn 0.8s ease-out;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .box::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, transparent, var(--gold), transparent);
+        }
+
+        .header-area {
+            text-align: center;
+            margin-bottom: 35px;
+        }
+
+        h1 {
+            color: var(--gold);
+            margin: 0 0 4px 0;
+            font-size: 28px;
+            letter-spacing: 1px;
+            font-weight: 700;
+            text-transform: uppercase;
+            text-shadow: 0 2px 10px rgba(212, 175, 55, 0.2);
+        }
+
+        .artist-sub {
+            color: #e0e0e0;
+            font-size: 16px;
+            font-weight: 600;
+            margin: 0 0 12px 0;
+            letter-spacing: 0.5px;
+        }
+
+        .subtitle {
+            color: var(--text-muted);
+            font-size: 14px;
+            margin: 0;
+        }
+
+        .price-badge-top {
+            display: inline-block;
+            background: rgba(212, 175, 55, 0.15);
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 6px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+
+        .input-group {
+            margin-bottom: 22px;
+            position: relative;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #e0e0e0;
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        input, select, textarea {
+            width: 100%;
+            padding: 14px 16px;
+            background: var(--input-bg);
+            border: 1px solid #333;
+            color: var(--text-color);
+            border-radius: 8px;
+            box-sizing: border-box;
+            font-size: 15px;
+            transition: all 0.3s ease;
+            font-family: inherit;
+        }
+
+        input:focus, select:focus, textarea:focus {
+            border-color: var(--gold);
+            background: #252525;
+            box-shadow: 0 0 10px rgba(212, 175, 55, 0.15);
+            outline: none;
+        }
+
+        textarea {
+            height: 110px;
+            resize: vertical;
+        }
+
+        select {
+            cursor: pointer;
+            appearance: none;
+            background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' fill='%23d4af37' viewBox='0 0 24 24'><path d='M7 10l5 5 5-5z'/></svg>");
+            background-repeat: no-repeat;
+            background-position: right 16px center;
+        }
+
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        @media (max-width: 500px) {
+            .form-row {
+                grid-template-columns: 1fr;
+                gap: 0;
+            }
+        }
+
+        .live-price-badge {
+            background: rgba(212, 175, 55, 0.1);
+            border: 1px solid var(--gold);
+            padding: 12px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: 700;
+            color: #fff;
+            font-size: 15px;
+            margin-bottom: 22px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .live-price-badge span {
+            color: var(--highlight);
+            font-size: 18px;
+            text-shadow: 0 0 8px rgba(255, 204, 0, 0.4);
+        }
+
+        .terms-container {
+            margin: 25px 0 15px 0;
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.03);
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #222;
+        }
+
+        .terms-container input[type="checkbox"] {
+            width: 20px;
+            height: 20px;
+            accent-color: var(--gold);
+            cursor: pointer;
+            margin-top: 2px;
+            flex-shrink: 0;
+        }
+
+        .terms-text {
+            font-size: 14px;
+            color: #e0e0e0;
+            line-height: 1.4;
+        }
+
+        .terms-link {
+            color: var(--gold);
+            text-decoration: underline;
+            cursor: pointer;
+            font-weight: 600;
+        }
+
+        .terms-link:hover {
+            color: var(--gold-hover);
+        }
+
+        .social-section {
+            text-align: center;
+            margin-top: 35px;
+            padding-top: 25px;
+            border-top: 1px solid rgba(255, 255, 255, 0.08);
+        }
+
+        .social-title {
+            font-size: 12px;
+            color: var(--text-muted);
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+
+        .social-icons {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .social-icon-btn {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            background: #1a1a1a;
+            border: 1px solid #333;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.3s ease;
+            color: var(--text-muted);
+        }
+
+        .social-icon-btn svg {
+            width: 20px;
+            height: 20px;
+            fill: currentColor;
+        }
+
+        .social-icon-btn:hover {
+            transform: translateY(-3px);
+            color: #000;
+            border-color: transparent;
+        }
+
+        .icon-instagram:hover { background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%); }
+        .icon-tiktok:hover { background: #000000; color: #fff; border-color: #00f2fe; box-shadow: 2px 2px 0 #fe0979, -2px -2px 0 #00f2fe; }
+        .icon-kwai:hover { background: #ff5000; color: #fff; }
+        .icon-facebook:hover { background: #1877f2; color: #fff; }
+        .icon-youtube:hover { background: #ff0000; color: #fff; }
+        .icon-spotify:hover { background: #1ed760; color: #000; }
+
+        .btn-main {
+            background: linear-gradient(135deg, var(--gold) 0%, #b8952e 100%);
+            color: #000;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+            margin-top: 15px;
+            box-shadow: 0 4px 15px rgba(212, 175, 55, 0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: block;
+        }
+
+        .btn-main:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(212, 175, 55, 0.5);
+        }
+
+        .btn-main:disabled {
+            background: linear-gradient(135deg, #444 0%, #292929 100%) !important;
+            color: #666 !important;
+            cursor: not-allowed !important;
+            transform: none !important;
+            box-shadow: none !important;
+            opacity: 0.6;
+        }
+
+        .pix-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0,0,0,0.85);
+            z-index: 999;
+            backdrop-filter: blur(8px);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .pix-box {
+            background: #181818;
+            border: 1px solid var(--gold);
+            padding: 35px;
+            border-radius: 16px;
+            max-width: 450px;
+            width: 90%;
+            text-align: center;
+            box-shadow: 0 0 30px rgba(212, 175, 55, 0.2);
+            animation: modalScale 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        }
+
+        .terms-modal-content {
+            text-align: left;
+            max-height: 300px;
+            overflow-y: auto;
+            background: #101010;
+            padding: 15px;
+            border-radius: 8px;
+            border: 1px solid #333;
+            font-size: 13px;
+            line-height: 1.6;
+            color: var(--text-muted);
+            margin: 15px 0;
+        }
+
+        @keyframes modalScale {
+            from { transform: scale(0.8); opacity: 0; }
+            to { transform: scale(1); opacity: 1; }
+        }
+
+        .pix-title {
+            color: var(--gold);
+            font-size: 22px;
+            font-weight: 700;
+            margin-bottom: 15px;
+        }
+
+        .donation-callout {
+            background: rgba(255, 204, 0, 0.1);
+            border: 1px dashed var(--highlight);
+            color: var(--highlight);
+            padding: 12px;
+            border-radius: 8px;
+            font-size: 14px;
+            font-weight: 700;
+            margin: 20px 0;
+            line-height: 1.4;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+        }
+
+        .pix-amount-badge {
+            display: block;
+            font-size: 32px;
+            font-weight: 800;
+            color: #fff;
+            margin: 15px 0;
+            background: rgba(212, 175, 55, 0.1);
+            padding: 15px;
+            border-radius: 8px;
+            border: 2px solid var(--gold);
+            text-shadow: 0 0 10px rgba(212, 175, 55, 0.3);
+        }
+
+        .pix-amount-badge small {
+            font-size: 14px;
+            display: block;
+            color: var(--text-muted);
+            font-weight: normal;
+            margin-bottom: 4px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .pix-key-container {
+            background: #252525;
+            padding: 12px;
+            border-radius: 8px;
+            border: 1px dashed #444;
+            margin: 15px 0;
+            word-break: break-all;
+            font-family: monospace;
+            font-size: 14px;
+            color: #fff;
+        }
+
+        .bank-badge {
+            display: inline-block;
+            background: #820ad1;
+            color: white;
+            padding: 4px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 700;
+            margin-top: 5px;
+            text-transform: uppercase;
+        }
+
+        .copy-btn {
+            background: transparent;
+            border: 1px solid var(--gold);
+            color: var(--gold);
+            padding: 8px 15px;
+            font-size: 12px;
+            border-radius: 6px;
+            margin-top: 5px;
+            cursor: pointer;
+            transition: all 0.2s;
+            box-shadow: none;
+            width: auto;
+            text-transform: none;
+            letter-spacing: 0;
+        }
+
+        .copy-btn:hover {
+            background: var(--gold);
+            color: #000;
+            transform: none;
+        }
+
+        .wpp-send-btn {
+            background: linear-gradient(135deg, #25D366 0%, #128C7E 100%);
+            color: #fff;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.2);
+            margin-top: 20px;
+            display: none;
+            font-weight: 700;
+            font-size: 16px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 16px;
+            border: 0;
+            border-radius: 8px;
+            cursor: pointer;
+            width: 100%;
+        }
+        .wpp-send-btn:hover {
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="audio-wave-bg">
+        <span></span><span></span><span></span><span></span><span></span>
+        <span></span><span></span><span></span><span></span><span></span>
+    </div>
+
+    <div class="container">
+        <div class='box'>
+            <div class="header-area">
+                <h1>Músicas Personalizadas</h1>
+                <div class="artist-sub">com Marcelo Junior</div>
+                <p class="subtitle">Preencha os detalhes para fazer seu pedido</p>
+                <div class="price-badge-top">Letra a partir de: R$ 9,99</div>
+            </div>
+            
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Seu Nome</label>
+                    <input id='cliente' placeholder='Ex: João Silva'>
+                </div>
+                
+                <div class="input-group">
+                    <label>Seu WhatsApp</label>
+                    <input id='fone' placeholder='Ex: 85999999999'>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Nome do(a) Homenageado(a)</label>
+                    <input id='nome' placeholder='Ex: Maria'>
+                </div>
+                
+                <div class="input-group">
+                    <label>Incluir nome na música?</label>
+                    <select id='usarNome'>
+                        <option>Sim</option>
+                        <option>Não</option>
+                        <option>Apenas no refrão</option>
+                    </select>
+                </div>
+            </div>
+            
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Estilo / Ritmo</label>
+                    <select id='ritmo'>
+                        <option>Forró</option>
+                        <option>Piseiro</option>
+                        <option>Sertanejo</option>
+                        <option>Arrocha</option>
+                        <option>Brega</option>
+                        <option>Brega Funk</option>
+                        <option>Funk Melody</option>
+                        <option>Pagode</option>
+                        <option>Samba</option>
+                        <option>MPB</option>
+                        <option>Pop</option>
+                        <option>Rock</option>
+                        <option>Gospel</option>
+                    </select>
+                </div>
+                
+                <div class="input-group">
+                    <label>Clima da Música (Vibe)</label>
+                    <select id='clima'>
+                        <option>Romântica</option>
+                        <option>Alegre</option>
+                        <option>Sofrência</option>
+                        <option>Divertida</option>
+                        <option>Emocionante</option>
+                        <option>Sensual</option>
+                    </select>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="input-group">
+                    <label>Tamanho da Música</label>
+                    <select id='tamanhoMusica' onchange="atualizarValorFormulario()">
+                        <option value="9.99">Curta (R$ 9,99)</option>
+                        <option value="14.99">Média (R$ 14,99)</option>
+                        <option value="19.99">Longa (R$ 19,99)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Ocasião</label>
+                    <input id='ocasiao' placeholder='Ex: Aniversário de Casamento'>
+                </div>
+            </div>
+
+            <div class="live-price-badge">
+                Investimento da Letra: <span id="valorDinamicoForm">R$ 9,99</span>
+            </div>
+            
+            <div class="input-group">
+                <label>Conte Sua História</label>
+                <textarea id='hist' placeholder='Conte um pouco sobre a história, como se conheceram...'></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label>Momentos marcantes</label>
+                <textarea id='mom' placeholder='Detalhes marcantes, piadas internas, viagens...'></textarea>
+            </div>
+            
+            <div class="input-group">
+                <label>Palavras obrigatórias</label>
+                <textarea id='pal' placeholder='Palavras fundamentais...'></textarea>
+            </div>
+
+            <div class="terms-container">
+                <input type="checkbox" id="aceiteTermos" onchange="gerenciarBotaoPagamento()">
+                <div class="terms-text">
+                    Li e aceito os <span class="terms-link" onclick="abrirModalTermos()">Termos de Uso e Direitos Autorais</span> para a criação da música personalizada.
+                </div>
+            </div>
+            
+            <button id="btnAvancarPagamento" class="btn-main" onclick='abrirJanelaPix()' disabled>Avançar para o Pagamento</button>
+
+            <div class="social-section">
+                <div class="social-title">Siga minhas redes oficiais</div>
+                <div class="social-icons">
+                    <a href="https://www.instagram.com/marcelojunioroficial_/" target="_blank" class="social-icon-btn icon-instagram" title="Instagram">
+                        <svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zM12 0C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.051.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 1 0 0 12.324 6.162 6.162 0 0 0 0-12.324zM12 16a4 4 0 1 1 0-8 4 4 0 0 1 0 8zm6.406-11.845a1.44 1.44 0 1 0 0 2.881 1.44 1.44 0 0 0 0-2.881z"/></svg>
+                    </a>
+                    <a href="https://www.tiktok.com/@marcelojunioroficial_" target="_blank" class="social-icon-btn icon-tiktok" title="TikTok">
+                        <svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.05 1.51 4.21 1.13 1.44 2.75 2.42 4.56 2.71v3.91c-1.2-.14-2.38-.58-3.41-1.24-.71-.46-1.32-.1-1.83.42-.17.18-.3.4-.41.63-.04 2.86.01 5.72-.02 8.57-.1 1.9-.78 3.79-2.07 5.16-1.57 1.73-3.88 2.7-6.22 2.61-2.91-.06-5.69-1.82-6.84-4.5-1.3-2.97-.64-6.68 1.6-8.87 1.49-1.49 3.58-2.33 5.69-2.26.01 1.39-.01 2.77.01 4.16-1.3-.12-2.66.42-3.41 1.5-.75 1.05-.72 2.53.07 3.52.82 1.08 2.25 1.52 3.53 1.11 1.07-.32 1.86-1.3 1.94-2.42.06-4.04.01-8.07.03-12.11.02-.37.06-.74.12-1.11z"/></svg>
+                    </a>
+                    <a href="https://k.kwai.com/u/@marcelojunioroficial/DdMsAyC4" target="_blank" class="social-icon-btn icon-kwai" title="Kwai">
+                        <svg viewBox="0 0 24 24"><path d="M23 12c0 6.075-4.925 11-11 11S1 18.075 1 12 5.925 1 12 1s11 4.925 11 11zm-5.32-2.73a1 1 0 0 0-1-.07l-2.68 1.46V9a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v6a2 2 0 0 0 2 2h7a2 2 0 0 0 2-2v-1.66l2.68 1.46a1 1 0 0 0 1.52-.87V10.15a1 1 0 0 0-.2-.88z"/></svg>
+                    </a>
+                    <a href="https://www.facebook.com/marcellojunioroficial" target="_blank" class="social-icon-btn icon-facebook" title="Facebook">
+                        <svg viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+                    </a>
+                    <a href="https://www.youtube.com/channel/UCnpS2DJPQ2OQ50YEELgN3sA" target="_blank" class="social-icon-btn icon-youtube" title="YouTube">
+                        <svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+                    </a>
+                    <a href="https://open.spotify.com/intl-pt/artist/3O5iTGHgbWOfBbMlme80tY" target="_blank" class="social-icon-btn icon-spotify" title="Spotify">
+                        <svg viewBox="0 0 24 24"><path d="M12 0C5.373 0 0 5.373 0 12s5.373 12 12 12 12-5.373 12-12S18.627 0 12 0zm5.494 17.308c-.213.349-.669.461-1.018.248-2.848-1.741-6.433-2.135-10.655-1.171-.4.092-.801-.161-.893-.561-.092-.4.161-.801.561-.893 4.623-1.056 8.577-.611 11.758 1.335.349.213.461.669.248 1.018zm1.467-3.258c-.268.435-.839.576-1.273.308-3.259-2.003-8.23-2.585-12.085-1.415-.49.149-1.007-.13-1.156-.62-.149-.49.13-1.007.62-1.156 4.412-1.338 9.894-.693 13.626 1.603.435.268.576.839.308 1.273zm.129-3.378c-.417.685-1.314.912-2 1.494-4.017-2.386-10.631-2.607-14.475-1.44-.73.221-1.494-.199-1.715-.929-.221-.73.199-1.494.929-1.715 4.564-1.386 11.859-1.11 16.471 1.629.686.417.912 1.314.49 2z"/></svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div id="termsModal" class="pix-modal">
+        <div class="pix-box" style="max-width: 500px;">
+            <div class="pix-title" style="font-size: 18px;">📄 Termos de Uso e Direitos Autorais</div>
+            
+            <div class="terms-modal-content">
+                <strong>Cláusula de Propriedade Intelectual:</strong><br><br>
+                Ao preencher este formulário e solicitar uma composição, o contratante/cliente declara estar ciente de que a produção musical e a criação da letra configuram obras intelectuais protegidas pela Lei de Direitos Autorais (Lei nº 9.610/98).<br><br>
+                Fica expressamente estabelecido que <strong>o cliente NÃO terá nenhum vínculo, titularidade ou direito autoral</strong> sobre qualquer música ou letra composta neste projeto. Os direitos patrimoniais e morais da obra pertencem de forma vitalícia, integral e exclusiva ao autor e compositor <strong>Marcelo Junior</strong>.<br><br>
+                O valor pago refere-se exclusivamente à prestação de serviço de personalização e desenvolvimento da encomenda conforme o briefing fornecido.
+            </div>
+
+            <button onclick="fecharModalTermos()" style="padding: 10px; font-size: 14px; margin-top: 5px; cursor: pointer;">Entendido e Fechar</button>
+        </div>
+    </div>
+
+    <div id="pixModal" class="pix-modal">
+        <div class="pix-box">
+            <div class="pix-title">🎵 Quase lá!</div>
+            <p style="color: var(--text-muted); font-size: 14px; line-height: 1.5;">Para concluir o envio do seu pedido ao estúdio, realize o pagamento via Pix.</p>
+            
+            <div class="pix-amount-badge">
+                <small>Valor a Transferir</small>
+                <span id="valorDinamicoPix">R$ 9,99</span>
+            </div>
+            
+            <div style="margin: 10px 0 10px 0; border-top: 1px solid #333; padding-top: 15px;">
+                <p style="font-weight: 600; font-size: 15px; margin: 0 0 5px 0; color: #fff;">Composição e Produção</p>
+                <p style="color: var(--text-muted); font-size: 13px; margin: 0;">Copie a chave para liberar o envio do formulário:</p>
+            </div>
+
+            <div class="pix-key-container">
+                <span id="pixChave">marcelosousajunior3@hotmail.com</span>
+                <br>
+                <span class="bank-badge">Nubank</span>
+            </div>
+
+            <button class="copy-btn" onclick="copiarChave()">Copiar Chave Pix</button>
+            
+            <div class="donation-callout">
+                ❤️ Faça uma doação para que eu continue esse projeto!
+            </div>
+            
+            <button id="btnWpp" class="wpp-send-btn" onclick="enviarWhatsApp()">✅ Enviar Pedido via WhatsApp</button>
+            
+            <p style="color: #666; font-size: 11px; margin-top: 25px;">O botão de envio será liberado assim que você clicar em copiar a chave Pix.</p>
+        </div>
+    </div>
+
+    <script>
+        function g(id){
+            return document.getElementById(id).value;
+        }
+
+        function codificarBase64(str) {
+            return btoa(encodeURIComponent(str).replace(/%([0-9A-F]{2})/g, function(match, p1) {
+                return String.fromCharCode('0x' + p1);
+            }));
+        }
+
+        function abrirModalTermos() {
+            document.getElementById('termsModal').style.display = 'flex';
+        }
+
+        function fecharModalTermos() {
+            document.getElementById('termsModal').style.display = 'none';
+        }
+
+        function atualizarValorFormulario() {
+            const selectTamanho = document.getElementById('tamanhoMusica');
+            const valor = parseFloat(selectTamanho.value).toFixed(2).replace('.', ',');
+            
+            document.getElementById('valorDinamicoForm').innerText = 'R$ ' + valor;
+            document.getElementById('valorDinamicoPix').innerText = 'R$ ' + valor;
+        }
+
+        function gerenciarBotaoPagamento() {
+            const checkbox = document.getElementById('aceiteTermos');
+            const botao = document.getElementById('btnAvancarPagamento');
+            
+            if (checkbox.checked) {
+                botao.removeAttribute('disabled');
+            } else {
+                botao.setAttribute('disabled', 'true');
+            }
+        }
+
+        function abrirJanelaPix() {
+            if (g('cliente').trim() === "" || g('fone').trim() === "") {
+                alert("Por favor, preencha o seu Nome e o seu WhatsApp antes de avançar.");
+                return;
+            }
+            
+            if (!document.getElementById('aceiteTermos').checked) {
+                alert("Você precisa ler e aceitar os Termos de Uso e Direitos Autorais para continuar.");
+                return;
+            }
+
+            document.getElementById('pixModal').style.display = 'flex';
+        }
+
+        function copiarChave() {
+            const chave = document.getElementById('pixChave').innerText;
+            navigator.clipboard.writeText(chave).then(() => {
+                const btn = document.querySelector('.copy-btn');
+                btn.innerText = "Chave Copiada!";
+                document.getElementById('btnWpp').style.display = 'block';
+                setTimeout(() => { btn.innerText = "Copiar Chave Pix"; }, 2000);
+            });
+        }
+
+        function enviarWhatsApp(){
+            const pedido = 'MJ' + Date.now();
+            const selectTamanho = document.getElementById('tamanhoMusica');
+            const tamanhoTexto = selectTamanho.options[selectTamanho.selectedIndex].text;
+            const valorFinal = 'R$ ' + parseFloat(selectTamanho.value).toFixed(2).replace('.', ',');
+            
+            const promptOriginal = `Você é um compositor profissional especialista em criar letras de música marcantes. Crie uma música 100% original e inédita com base estrita nas seguintes especificações coletadas:\n\n` +
+                                   `- **Estilo / Ritmo Musical:** O estilo da música DEVE ser ${g('ritmo')}.\n` +
+                                   `- **Clima / Vibe da Música:** O sentimento/clima predominante da letra DEVE ser ${g('clima')}.\n` +
+                                   `- **Tamanho Escolhido:** A música deve possuir formato ${tamanhoTexto}.\n` +
+                                   `- **Homenageado(a):** A música é dedicada a ${g('nome')}.\n` +
+                                   `- **Uso do nome:** Sobre incluir o nome na letra, a regra é: ${g('usarNome')}.\n` +
+                                   `- **Ocasião:** O contexto/tema central é para um(a) ${g('ocasiao')}.\n` +
+                                   `- **História de fundo:** Use estes detalhes reais para construir os versos: "${g('hist')}".\n` +
+                                   `- **Momentos marcantes para incluir:** Destaque estes acontecimentos na narrativa: "${g('mom')}".\n` +
+                                   `- **Palavras que DEVEM obrigatoriamente aparecer:** ${g('pal')}.\n\n` +
+                                   `**Declaração Legal de Direitos:** O cliente aceitou os termos confirmando que NÃO possui quaisquer direitos autorais ou patrimoniais sobre esta obra, pertencendo estes inteiramente a Marcelo Junior.\n\n` +
+                                   `**Estrutura da Música:**\n` +
+                                   `A composição deve seguir exatamente esta estrutura padrão: Verso 1 (4 linhas), Verso 2 (4 linhas), Pré-Refrão (2 linhas) e Refrão marcante com o título da música adaptado ao tema. Garanta que a letra seja emocionante, coesa e rime perfeitamente de acordo com o ritmo escolhido (${g('ritmo')}) e mantendo o clima solicitado (${g('clima')}).`;
+
+            const promptCriptografado = codificarBase64(promptOriginal);
+
+            const msg = `🎵 *NOVO PEDIDO DE MÚSICA* 🎵%0A%0A` +
+                        `*Ordem de Production:* ${pedido}%0A` +
+                        `*Cliente:* ${g('cliente')}%0A` +
+                        `*WhatsApp:* ${g('fone')}%0A` +
+                        `*Tamanho da Música:* ${tamanhoTexto}%0A` +
+                        `*Valor do Pedido:* ${valorFinal}%0A` +
+                        `*Termos de Uso:* ✅ ACEITO%0A` +
+                        `*Direitos Autorais:* 🔒 Cliente declarou estar ciente e de acordo que NÃO possui nenhum vínculo ou direito autoral sobre a obra criada, sendo os direitos exclusivos do compositor Marcelo Junior.%0A%0A` +
+                        `*--- CÓDIGO DO PEDIDO ---*%0A\`\`\`\n${promptCriptografado}\n\`\`\``;
+
+            window.open('https://wa.me/5585988530387?text=' + msg, '_blank');
+        }
+
+        atualizarValorFormulario();
+    </script>
+</body>
+</html>
